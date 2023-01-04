@@ -18,7 +18,12 @@ else
   echo "backup-Folder $PWD/$backup_folder erstellt"
 fi
 #
-tar -cjf "$backup_folder/$backup_file" --exclude=$backup_folder -C "$home_folder" .
+#tar -cjf "$backup_folder/$backup_file" --exclude=$backup_folder -C "$home_folder" .
+tar -cjf "$backup_folder/$backup_file" \
+--exclude=$backup_folder \
+--exclude=.cache \
+--exclude=backuplog.txt \
+-C "$home_folder" .
 # *********
 #echo '-cjf "$backup_folder/$backup_file" --exclude=$backup_folder -C "$home_folder" .'
 #
